@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class PlayerMvmt : MonoBehaviour
 {
-    [SerializeField] Vector2 playerSpeed = new Vector2(10, 0);
-    private Rigidbody2D rb;
+
+    [SerializeField] float speed = 10f;
+
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
@@ -22,16 +23,18 @@ public class PlayerMvmt : MonoBehaviour
     {
         if (Input.GetKey("a") || Input.GetKey("left"))
         {
-            movePlayer(-1);
+            if (transform.position.x > -8.35) {
+                transform.Translate(speed * Vector2.left * Time.deltaTime);
+            }
+            
         }
         else if (Input.GetKey("d") || Input.GetKey("right"))
         {
-            movePlayer(1);
+            if (transform.position.x < 8.35) {
+                transform.Translate(speed * Vector2.right * Time.deltaTime);
+            }
+            
         }
     }
 
-    void movePlayer(int direction)
-    {
-        rb.MovePosition(rb.position + direction * (playerSpeed * Time.deltaTime));
-    }
 }
