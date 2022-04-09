@@ -11,7 +11,8 @@ public class BulletBehav : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = this.GetComponent<Rigidbody2D>();
+        //rb.velocity = transform.up * speed;
     }
 
     // Update is called once per frame
@@ -35,6 +36,9 @@ public class BulletBehav : MonoBehaviour
         Debug.Log("hit");
         collided = true;
         
-        Destroy(gameObject);
+        if (gameObject != null) {
+            Destroy(gameObject);
+        }
+        
     }
 }
