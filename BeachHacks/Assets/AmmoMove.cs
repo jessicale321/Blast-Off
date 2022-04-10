@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstacleMove : MonoBehaviour
+public class AmmoMove : MonoBehaviour
 {
     [SerializeField] float speed = 3f;
-    [SerializeField] int damage = 4;
     private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
@@ -30,9 +29,9 @@ public class ObstacleMove : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        PlayerHit player = other.gameObject.GetComponent<PlayerHit>();
+        PlayerShoot player = other.gameObject.GetComponent<PlayerShoot>();
         if (player != null) {
-            player.TakeDamage(damage);
+            PlayerShoot.addAmmo(1);
         }
 
         if (gameObject != null) {

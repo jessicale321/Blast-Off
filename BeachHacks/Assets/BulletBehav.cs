@@ -27,7 +27,7 @@ public class BulletBehav : MonoBehaviour
         if (transform.position.y > 5) {
             if (gameObject != null) {
             Destroy(gameObject);
-        }
+            }
         }
         //transform.Translate(0, speed * Time.deltaTime, 0);
         

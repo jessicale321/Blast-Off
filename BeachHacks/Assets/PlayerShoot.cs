@@ -7,6 +7,7 @@ public class PlayerShoot : MonoBehaviour
     public GameObject bulletPrefab;
     GameObject bulletInstance;
     [SerializeField] public float offset = 0.75f;
+    [SerializeField] public static int bulletAmt = 20;
     void Awake() {
         
     }
@@ -19,10 +20,16 @@ public class PlayerShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && bulletAmt > 0)
         {
             bulletInstance = Instantiate(bulletPrefab, transform.position + (transform.up * offset), transform.rotation) as GameObject;
+            bulletAmt--;
+            Debug.Log("Bullets left: " + bulletAmt);
         }
+    }
+
+    public static void addAmmo(int newAmt) {
+        bulletAmt += newAmt;
     }
 
 }
