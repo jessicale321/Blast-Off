@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerShoot : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class PlayerShoot : MonoBehaviour
     GameObject bulletInstance;
     [SerializeField] public float offset = 0.75f;
     [SerializeField] public static int bulletAmt = 10;
+    public Text ammoText;
     void Awake() {
         
     }
@@ -20,6 +22,7 @@ public class PlayerShoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ammoText.text = "Ammo: " + bulletAmt.ToString();
         if(Input.GetKeyDown(KeyCode.Space) && bulletAmt > 0)
         {
             bulletInstance = Instantiate(bulletPrefab, transform.position + (transform.up * offset), transform.rotation) as GameObject;

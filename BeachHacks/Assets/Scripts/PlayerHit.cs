@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerHit : MonoBehaviour
 {
     public int health = 20;
     float colorTime = 1f;
     float currentTime;
+    public Text healthText;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +18,7 @@ public class PlayerHit : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        healthText.text = "Health: " + health.ToString();
     }
 
     public void TakeDamage(int damage) 
