@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fed69de96a564324ea271315dd912920, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 7
 --- !u!61 &522323229529442135
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -153,8 +153,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f5e0e154fab19a47a3fd289a32660b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
   healthText: {fileID: 0}
+  respawnPoint: {fileID: 0}
+  playerPrefab: {fileID: 0}
+  player: {fileID: 0}
 --- !u!114 &2801773947631694611
 MonoBehaviour:
   m_ObjectHideFlags: 0
