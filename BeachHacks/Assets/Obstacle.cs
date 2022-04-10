@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    public int health = 1;
+    public int health = 2;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +20,7 @@ public class Obstacle : MonoBehaviour
     public void TakeDamage(int damage) 
     {
         health -= damage;
+        gameObject.GetComponent<Renderer>().material.color = Color.red;
         if (health <= 0)
         {
             Destroy(gameObject);
