@@ -23,14 +23,14 @@ public class PlayerMvmt : MonoBehaviour
     {
         if (Input.GetKey("a") || Input.GetKey("left"))
         {
-            if (transform.position.x > -8.35) {
+            if (transform.position.x > -7.35) {
                 transform.Translate(speed * Vector2.left * Time.deltaTime);
             }
             
         }
         else if (Input.GetKey("d") || Input.GetKey("right"))
         {
-            if (transform.position.x < 8.35) {
+            if (transform.position.x < 7.35) {
                 transform.Translate(speed * Vector2.right * Time.deltaTime);
             }
             
