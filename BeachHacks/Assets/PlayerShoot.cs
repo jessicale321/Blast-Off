@@ -7,7 +7,7 @@ public class PlayerShoot : MonoBehaviour
     public GameObject bulletPrefab;
     GameObject bulletInstance;
     [SerializeField] public float offset = 0.75f;
-    [SerializeField] public static int bulletAmt = 20;
+    [SerializeField] public static int bulletAmt = 10;
     void Awake() {
         
     }

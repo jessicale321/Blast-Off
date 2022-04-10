@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletBehav : MonoBehaviour
 {
     [SerializeField] float speed = 4.5f;
-    [SerializeField] int damage = 2;
+    [SerializeField] int damage = 1;
     private Rigidbody2D rb;
     public bool collided = false;
     // Start is called before the first frame update
@@ -37,7 +37,6 @@ public class BulletBehav : MonoBehaviour
         if (obstacle != null) {
             obstacle.TakeDamage(damage);
         }
-        // https://www.youtube.com/watch?v=oDtAOpBlTAo
         Debug.Log("hit");
         collided = true;
         

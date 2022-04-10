@@ -31,7 +31,7 @@ public class AmmoMove : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other) {
         PlayerShoot player = other.gameObject.GetComponent<PlayerShoot>();
         if (player != null) {
-            PlayerShoot.addAmmo(1);
+            PlayerShoot.addAmmo(3);
         }
 
         if (gameObject != null) {

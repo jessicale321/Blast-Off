@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObstacleHit : MonoBehaviour
 {
-    public int health = 2;
+    public int health = 3;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +19,7 @@ public class ObstacleHit : MonoBehaviour
 
     public void TakeDamage(int damage) 
     {
+        Debug.Log("obstacle health: " + health);
         health -= damage;
         gameObject.GetComponent<Renderer>().material.color = Color.red;
         if (health <= 0)

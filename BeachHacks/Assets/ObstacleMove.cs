@@ -33,10 +33,11 @@ public class ObstacleMove : MonoBehaviour
         PlayerHit player = other.gameObject.GetComponent<PlayerHit>();
         if (player != null) {
             player.TakeDamage(damage);
-        }
-
-        if (gameObject != null) {
+            if (gameObject != null) {
             Destroy(gameObject);
         }
+        }
+
+        
     }
 }
