@@ -22,7 +22,7 @@ public class ObstacleMove : MonoBehaviour
     void FixedUpdate() 
     {
         rb.MovePosition(rb.position + Vector2.down * Time.deltaTime * speed);
-        if (transform.position.y < -6) {
+        if (transform.position.y < -8) {
             if (gameObject != null) {
             Destroy(gameObject);
             }

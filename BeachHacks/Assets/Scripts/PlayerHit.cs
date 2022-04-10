@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerHit : MonoBehaviour
 {
-    public static int health = 20;
+    [SerializeField] public static int health = 10;
     float colorTime = 1f;
     float currentTime;
     public Text healthText;
