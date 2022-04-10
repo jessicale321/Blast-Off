@@ -24,11 +24,16 @@ public class BulletBehav : MonoBehaviour
     void FixedUpdate() 
     {
         rb.MovePosition(rb.position + Vector2.up * Time.deltaTime * speed);
+        if (transform.position.y > 5) {
+            if (gameObject != null) {
+            Destroy(gameObject);
+        }
+        }
         //transform.Translate(0, speed * Time.deltaTime, 0);
         
     }
     private void OnTriggerEnter2D(Collider2D other) {
-        Obstacle obstacle = other.gameObject.GetComponent<Obstacle>();
+        ObstacleHit obstacle = other.gameObject.GetComponent<ObstacleHit>();
         if (obstacle != null) {
             obstacle.TakeDamage(damage);
         }
